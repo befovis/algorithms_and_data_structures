@@ -32,7 +32,10 @@
 ```bash
     python src/main.py
 ```
-
+4. Запуск тестов:
+```bash
+    python -m unittest discover tests/
+```
 ## Тестирование
 Для запуска тестов выполните:
 ```bash
