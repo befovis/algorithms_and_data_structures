@@ -7,10 +7,10 @@ def calc_fib(n):
     if (n <= 1):
         return n
     return calc_fib(n - 1) + calc_fib(n - 2)
-f = open("scr/input.txt")
+f = open("../../task1/txtf/input.txt")
 n = int(f.readline())
 f.close()
-w = open('scr/output.txt', 'w')
+w = open('../../task1/txtf/output.txt', 'w')
 w.write(str(calc_fib(n)))
 w.close()
 print("Время работы: %s секунд " % (time.perf_counter() - t_start))
