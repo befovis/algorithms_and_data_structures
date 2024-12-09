@@ -13,10 +13,10 @@ def run_task(task_path: str, description: str, cwd: str):
     :param description: Описание задачи.
     :param cwd: Рабочая директория для запуска задачи.
     """
-    print(f"Запуск задачи: {description}")
+
     try:
         subprocess.run([sys.executable, task_path], check=True, cwd=cwd)
-        print(f"Задача '{description}' выполнена успешно.\n")
+
     except subprocess.CalledProcessError as e:
         print(f"Ошибка при выполнении задачи '{description}'.")
         print(f"Статус: {e.returncode}\n")
@@ -30,13 +30,13 @@ def run_tests(test_files, description: str, tests_dir: str):
     :param description: Описание тестов.
     :param tests_dir: Рабочая директория для запуска тестов.
     """
-    print(f"Запуск тестов: {description}")
+
     for test_file in test_files:
         test_filename = os.path.basename(test_file)
-        print(f"Запуск теста: {test_filename}")
+
         try:
             subprocess.run([sys.executable, '-m', 'unittest', test_filename], check=True, cwd=tests_dir)
-            print(f"Тест '{test_filename}' пройден успешно.\n")
+
         except subprocess.CalledProcessError as e:
             print(f"Тест '{test_filename}' не пройден.")
             print(f"Статус: {e.returncode}\n")
